@@ -1,0 +1,121 @@
+/* ============================================================
+   Data Tables & Lists Specification
+   ============================================================ */
+
+.admin-table-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  width: 100%;
+}
+
+.admin-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+/* Header Row */
+.admin-data-table thead th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+/* Data Rows */
+.admin-data-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.admin-data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.admin-data-table tbody tr:hover {
+  background-color: rgba(136, 19, 55, 0.02);
+}
+
+.admin-data-table tbody tr.clickable-row {
+  cursor: pointer;
+}
+
+.admin-data-table tbody td {
+  padding: 0.95rem 1.15rem;
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+/* Primary item title styling inside tables */
+.table-primary-text {
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.table-secondary-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Empty & Loading states */
+.admin-table-empty,
+.admin-table-loading {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+
+.admin-empty-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.admin-empty-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.admin-table-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(136, 19, 55, 0.15);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: table-spin 0.7s linear infinite;
+}
+
+@keyframes table-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

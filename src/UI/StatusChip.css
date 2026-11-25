@@ -1,0 +1,110 @@
+/* ============================================================
+   Status Chips & Filter Pills Specification
+   ============================================================ */
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.status-chip-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Success: Paid / Completed / Delivered / In-Stock */
+.status-chip-paid,
+.status-chip-completed,
+.status-chip-delivered,
+.status-chip-in-stock,
+.status-chip-active {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+/* Warning: Pending / Processing / Low-Stock / Waiting */
+.status-chip-pending,
+.status-chip-processing,
+.status-chip-low-stock,
+.status-chip-waiting {
+  background-color: var(--warning-bg);
+  color: var(--warning);
+  border: 1px solid var(--warning-border);
+}
+
+/* Danger / Error: Cancelled / Out-of-Stock / Refunded / Failed */
+.status-chip-cancelled,
+.status-chip-out-of-stock,
+.status-chip-refunded,
+.status-chip-failed {
+  background-color: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+/* Info: Shipping / In-Transit */
+.status-chip-shipping {
+  background-color: var(--info-bg);
+  color: var(--info);
+  border: 1px solid var(--info-border);
+}
+
+/* PhonePe Brand Accent */
+.status-chip-phonepe {
+  background-color: var(--phonepe-bg);
+  color: var(--phonepe);
+  border: 1px solid var(--phonepe-border);
+  font-weight: 700;
+}
+
+/* Razorpay Brand Accent */
+.status-chip-razorpay {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  font-weight: 700;
+}
+
+/* Brand Primary Light Tint (Boutique Customized / Tag / Highlights) */
+.status-chip-brand,
+.status-chip-custom {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid var(--primary-border);
+  font-weight: 700;
+}
+
+/* Pulse Animation Dot */
+.status-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: chip-pulse 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes chip-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
