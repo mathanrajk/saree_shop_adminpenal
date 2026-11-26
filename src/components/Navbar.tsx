@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       <nav className="navbar-container">
         {/* Brand Logo & Boutique Identity */}
         <div className="navbar-brand-section">
-          <NavLink to="/all-products" className="brand-logo" onClick={closeMenu}>
+          <NavLink to="/" className="brand-logo" onClick={closeMenu}>
             <div className="brand-icon-box">
               <img src="/logo.png" alt="Appu Sarees Logo" className="brand-logo-img" />
             </div>
@@ -30,7 +30,8 @@ const Navbar: React.FC = () => {
         <ul className="navbar-links desktop-only">
           <li>
             <NavLink
-              to="/all-products"
+              to="/"
+              end
               className={({ isActive }) =>
                 isActive ? 'nav-item nav-item-active' : 'nav-item'
               }
@@ -81,7 +82,7 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <NavLink
-              to="/order"
+              to="/orders"
               className={({ isActive }) =>
                 isActive ? 'nav-item nav-item-active' : 'nav-item'
               }
@@ -172,7 +173,8 @@ const Navbar: React.FC = () => {
             <ul className="mobile-links">
               <li>
                 <NavLink
-                  to="/all-products"
+                  to="/"
+                  end
                   className={({ isActive }) =>
                     isActive
                       ? 'mobile-nav-item mobile-nav-active'
@@ -227,7 +229,7 @@ const Navbar: React.FC = () => {
               </li>
               <li>
                 <NavLink
-                  to="/order"
+                  to="/orders"
                   className={({ isActive }) =>
                     isActive
                       ? 'mobile-nav-item mobile-nav-active'

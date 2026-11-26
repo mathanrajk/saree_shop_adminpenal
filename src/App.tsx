@@ -15,24 +15,26 @@ const queryClient = new QueryClient({
   },
 });
 
+// Vite's BASE_URL is "/" at the domain root, or "/admin/" when deployed in a sub-folder.
+// BrowserRouter needs "/" or "/admin" (no trailing slash).
+const basename = import.meta.env.BASE_URL.replace(/\/+$/, '') || '/';
+
 function App() {
   return (
     <ThemeProvider theme={adminTheme}>
       <QueryClientProvider client={queryClient}>
-        <Router>
+        <Router basename={basename}>
           <div className="app">
             <Navbar />
             <main className="main-content">
               <Routes>
-                <Route path="/" element={<Navigate to="/all-products" replace />} />
-                <Route path="/all-products" element={<AllProduct />} />
-                <Route path="/all-product" element={<AllProduct />} />
+                <Route path="/" element={<AllProduct />} />
                 <Route path="/add-product" element={<AddProduct />} />
                 <Route path="/edit-product/:productId" element={<EditProduct />} />
                 <Route path="/product/edit/:productId" element={<EditProduct />} />
                 <Route path="/product" element={<Product />} />
-                <Route path="/order" element={<Order />} />
                 <Route path="/orders" element={<Order />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
           </div>

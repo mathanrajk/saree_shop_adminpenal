@@ -198,7 +198,7 @@ const EditProduct: React.FC = () => {
           </div>
           <button
             type="button"
-            onClick={() => navigate('/all-products')}
+            onClick={() => navigate('/')}
             className="btn-secondary"
           >
             ← Back to Sarees
@@ -409,7 +409,7 @@ const EditProduct: React.FC = () => {
             </button>
             <button
               type="button"
-              onClick={() => navigate('/all-products')}
+              onClick={() => navigate('/')}
               className="btn-secondary"
             >
               Cancel
