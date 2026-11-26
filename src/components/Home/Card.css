@@ -240,12 +240,77 @@
 }
 
 @media (max-width: 640px) {
+  /* Force 2 product cards per row on phones */
   .product-grid {
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .product-image-container {
-    height: 230px;
+    height: 170px;
+  }
+
+  .card-floating-badges {
+    top: 6px;
+    left: 6px;
+    right: 6px;
+  }
+
+  .product-tag,
+  .product-dresstype-tag {
+    font-size: 0.58rem;
+    padding: 2px 5px;
+  }
+
+  .product-discount-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+  }
+
+  .product-content {
+    padding: 0.7rem;
+    gap: 0.6rem;
+  }
+
+  .product-title {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .product-stock-wrapper .status-chip {
+    font-size: 0.62rem;
+    padding: 3px 7px;
+    gap: 0.25rem;
+  }
+
+  .product-footer-row {
+    padding-top: 0.6rem;
+    gap: 0.35rem;
+  }
+
+  .current-price {
+    font-size: 1rem;
+  }
+
+  .original-price {
+    font-size: 0.7rem;
+  }
+
+  .product-card-actions {
+    gap: 0.3rem;
+  }
+
+  /* Icon-only edit button so price + edit + delete fit in a narrow card */
+  .edit-product-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .edit-product-btn span {
+    display: none;
+  }
+
+  .delete-product-btn {
+    padding: 0.35rem;
   }
 }
